@@ -45,6 +45,12 @@ npm run install:browsers
 npm run dev
 ```
 
+如果没有安装 nvm，也可以用临时 Node 24 环境运行（不会替换系统 Node）：
+
+```bash
+npx -y -p node@24 -c "node -v && npm ci && npm run install:browsers && npm run dev"
+```
+
 打开：
 
 - 实验室首页：http://localhost:5173
