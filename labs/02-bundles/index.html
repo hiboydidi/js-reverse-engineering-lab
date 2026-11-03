@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>02 · Bundle 与 Source Map</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>02 · Bundle 与 Source Map</h1>
+      <p>从构建产物反向定位原始模块。</p>
+      <nav>
+        <a href="/">实验室首页</a><a aria-current="page" href="/labs/02-bundles/">02 Bundle</a>
+      </nav>
+    </header>
+    <main class="stack">
+      <section class="panel">
+        <h2>原始模块运行结果</h2>
+        <button class="button primary" id="run-bundle">执行商品价格逻辑</button>
+        <pre class="output" id="bundle-output">等待操作…</pre>
+      </section>
+      <section class="panel">
+        <h2>构建与观察</h2>
+        <ol>
+          <li>执行 npm run build。</li>
+          <li>打开 dist/assets，找到对应的 JS 与 .map 文件。</li>
+          <li>先查看压缩后的生成代码，再查看 Source Map 的 sources。</li>
+          <li>在 DevTools Sources 中尝试定位 formatOrder。</li>
+        </ol>
+        <p class="notice">
+          本实验故意保留 Source Map，便于学习映射原理。生产环境是否公开 Source Map
+          应由项目安全策略决定。
+        </p>
+      </section>
+    </main>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

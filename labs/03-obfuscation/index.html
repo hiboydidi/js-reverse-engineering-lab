@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>03 · 混淆识别</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>03 · 混淆识别</h1>
+      <p>从字符串表和索引函数恢复业务语义。</p>
+      <nav>
+        <a href="/">实验室首页</a><a aria-current="page" href="/labs/03-obfuscation/">03 混淆</a>
+      </nav>
+    </header>
+    <main class="stack">
+      <section class="panel">
+        <h2>教学样本</h2>
+        <p class="muted">逻辑位于 sample-obfuscated.js。先不要运行，先读代码并标出字符串索引。</p>
+        <label>商品小计<input id="subtotal" type="number" value="200" min="0" /></label
+        ><label
+          >优惠码<select id="coupon">
+            <option>LAB10</option>
+            <option>FIXED20</option>
+            <option>BADCODE</option>
+          </select></label
+        ><button class="button primary" id="run-obfuscated">运行样本</button>
+        <pre class="output" id="obfuscation-output">等待操作…</pre>
+      </section>
+      <section class="panel">
+        <h2>观察任务</h2>
+        <ol>
+          <li>找到字符串数组。</li>
+          <li>找到索引偏移量。</li>
+          <li>将数字索引替换成语义名称。</li>
+          <li>写出不使用混淆变量的等价函数。</li>
+        </ol>
+      </section>
+    </main>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

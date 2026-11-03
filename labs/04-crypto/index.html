@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>04 · Web Crypto</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>04 · Web Crypto</h1>
+      <p>理解摘要与消息认证码，观察本地演示签名。</p>
+      <nav>
+        <a href="/">实验室首页</a><a aria-current="page" href="/labs/04-crypto/">04 Crypto</a>
+      </nav>
+    </header>
+    <main class="stack">
+      <section class="panel">
+        <h2>HMAC-SHA256 本地演示</h2>
+        <p class="notice">
+          演示密钥公开写在前端代码中，只用于理解算法。任何客户端内置密钥都不能当作真实服务端凭据。
+        </p>
+        <button class="button primary" id="sign-request">生成签名并请求本地验证</button>
+        <pre class="output" id="crypto-output">等待操作…</pre>
+      </section>
+      <section class="panel">
+        <h2>观察任务</h2>
+        <ol>
+          <li>在 Sources 找到 stableStringify 和 createHmacKey。</li>
+          <li>确认参与签名的原始字符串。</li>
+          <li>观察签名输出为何是 64 个十六进制字符。</li>
+          <li>修改 payload 后重新签名，比较结果。</li>
+        </ol>
+      </section>
+    </main>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+{
+  "name": "js-reverse-engineering-lab",
+  "version": "1.0.0",
+  "private": true,
+  "description": "中文 JavaScript 逆向工程实战实验室：本地靶场、课程、案例与自动化测试",
+  "type": "module",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "dev:api": "node server/index.mjs",
+    "dev:web": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "test": "node --test",
+    "test:e2e": "playwright test",
+    "test:all": "npm run test && npm run test:e2e",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "env:check": "node scripts/verify-env.mjs",
+    "install:browsers": "playwright install chromium"
+  },
+  "dependencies": {
+    "ws": "^8.22.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.64.1",
+    "eslint": "^10.14.0",
+    "globals": "^17.14.0",
+    "prettier": "^3.9.10",
+    "vite": "^8.3.5"
+  },
+  "overrides": {
+    "minimatch": "^11.0.4"
+  }
+}

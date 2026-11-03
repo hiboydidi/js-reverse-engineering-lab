@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>05 · 浏览器存储</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>05 · 浏览器存储</h1>
+      <p>观察 Cookie、LocalStorage 和 SessionStorage 的区别。</p>
+      <nav>
+        <a href="/">实验室首页</a><a aria-current="page" href="/labs/05-storage/">05 Storage</a>
+      </nav>
+    </header>
+    <main class="stack">
+      <section class="panel">
+        <h2>写入本地演示数据</h2>
+        <label>学习昵称<input id="nickname" value="learner" /></label>
+        <div class="row">
+          <button class="button primary" id="save-storage">写入三种存储</button
+          ><button class="button" id="read-storage">读取当前值</button
+          ><button class="button" id="clear-storage">清理本地数据</button>
+        </div>
+        <pre class="output" id="storage-output">等待操作…</pre>
+      </section>
+      <section class="panel">
+        <h2>观察任务</h2>
+        <ol>
+          <li>打开 DevTools → Application → Storage。</li>
+          <li>比较 Local Storage 和 Session Storage。</li>
+          <li>查看 Cookies 中的 Path、SameSite、Expires。</li>
+          <li>刷新页面，再点击读取当前值。</li>
+        </ol>
+        <p class="notice">
+          仅在 localhost 使用教学数据。不要将真实 Cookie 或会话令牌粘贴到学习记录中。
+        </p>
+      </section>
+    </main>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

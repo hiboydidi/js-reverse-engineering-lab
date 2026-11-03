@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS 逆向工程实战实验室</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>JavaScript 逆向工程实战实验室</h1>
+      <p>从语法、浏览器调试到请求分析、混淆识别与本地复现。</p>
+    </header>
+    <main>
+      <div class="row">
+        <span class="status" id="api-status">正在检查本地 API…</span>
+        <span class="status">Node.js 24 · Vite · Playwright · 本地靶场</span>
+      </div>
+      <section class="panel">
+        <h2>学习路线</h2>
+        <p class="muted">
+          按编号从前往后完成。每个实验页面都有观察任务，完整案例说明位于 cases 目录。
+        </p>
+        <div class="grid">
+          <article class="card">
+            <h2>00 · JS 基础</h2>
+            <p>闭包、原型、异步执行顺序。</p>
+            <a href="/labs/00-basics/">进入实验 →</a>
+          </article>
+          <article class="card">
+            <h2>01 · Network 请求</h2>
+            <p>Fetch、XHR、请求参数和响应。</p>
+            <a href="/labs/01-network/">进入实验 →</a>
+          </article>
+          <article class="card">
+            <h2>02 · Bundle 与 Source Map</h2>
+            <p>打包产物、模块、源码映射。</p>
+            <a href="/labs/02-bundles/">进入实验 →</a>
+          </article>
+          <article class="card">
+            <h2>03 · 混淆识别</h2>
+            <p>字符串表、索引映射、逻辑还原。</p>
+            <a href="/labs/03-obfuscation/">进入实验 →</a>
+          </article>
+          <article class="card">
+            <h2>04 · Web Crypto</h2>
+            <p>SHA-256、HMAC 与本地签名验证。</p>
+            <a href="/labs/04-crypto/">进入实验 →</a>
+          </article>
+          <article class="card">
+            <h2>05 · 浏览器存储</h2>
+            <p>Cookie、LocalStorage、SessionStorage。</p>
+            <a href="/labs/05-storage/">进入实验 →</a>
+          </article>
+          <article class="card">
+            <h2>06 · WebSocket</h2>
+            <p>连接生命周期、消息帧和事件。</p>
+            <a href="/labs/06-websocket/">进入实验 →</a>
+          </article>
+          <article class="card">
+            <h2>07 · 综合案例</h2>
+            <p>从商品列表到优惠券预览，追踪完整调用链。</p>
+            <a href="/labs/07-final-case/">进入实验 →</a>
+          </article>
+        </div>
+      </section>
+      <section class="panel">
+        <h2>先做这三件事</h2>
+        <ol>
+          <li>打开 00 · JS 基础，运行页面里的按钮，解释输出顺序。</li>
+          <li>打开 01 · Network 请求，在 DevTools 的 Network 面板找到请求参数。</li>
+          <li>完成 cases/01-coupon-reconstruction，并写一份自己的学习记录。</li>
+        </ol>
+      </section>
+      <footer>只对本地靶场、自己编写的代码或明确授权的目标进行分析。</footer>
+    </main>
+    <script type="module" src="/index.js"></script>
+  </body>
+</html>

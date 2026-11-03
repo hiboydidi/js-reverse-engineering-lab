@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>06 · WebSocket</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>06 · WebSocket</h1>
+      <p>观察双向连接、消息帧和事件处理。</p>
+      <nav>
+        <a href="/">实验室首页</a><a aria-current="page" href="/labs/06-websocket/">06 WebSocket</a>
+      </nav>
+    </header>
+    <main class="stack">
+      <section class="panel">
+        <h2>本地库存推送</h2>
+        <div class="row">
+          <button class="button primary" id="connect-ws">连接</button
+          ><button class="button" id="disconnect-ws" disabled>断开</button
+          ><span class="status" id="ws-status">未连接</span>
+        </div>
+        <pre class="output" id="ws-output">等待消息…</pre>
+      </section>
+      <section class="panel">
+        <h2>观察任务</h2>
+        <ol>
+          <li>打开 DevTools → Network → WS。</li>
+          <li>连接后查看握手请求。</li>
+          <li>打开 Messages，区分客户端和服务端消息。</li>
+          <li>找到 onmessage 处理函数和消息 type 分支。</li>
+        </ol>
+      </section>
+    </main>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

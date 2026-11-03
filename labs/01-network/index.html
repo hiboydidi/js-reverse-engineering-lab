@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>01 · Network 请求</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>01 · Network 与请求链</h1>
+      <p>从页面事件追踪到 HTTP 请求和响应数据。</p>
+      <nav>
+        <a href="/">实验室首页</a><a aria-current="page" href="/labs/01-network/">01 Network</a>
+      </nav>
+    </header>
+    <main class="stack">
+      <section class="panel">
+        <h2>Fetch 分页请求</h2>
+        <div class="row">
+          <button class="button primary" id="fetch-products">请求第 1 页</button
+          ><button class="button" id="next-page">请求下一页</button>
+        </div>
+        <pre class="output" id="fetch-output">尚未请求</pre>
+      </section>
+      <section class="panel">
+        <h2>XMLHttpRequest 请求</h2>
+        <button class="button" id="xhr-products">使用 XHR 请求第 1 页</button>
+        <pre class="output" id="xhr-output">尚未请求</pre>
+      </section>
+      <section class="panel">
+        <h2>观察任务</h2>
+        <ol>
+          <li>打开 DevTools → Network → Fetch/XHR。</li>
+          <li>分别点击两个按钮，比较 Initiator。</li>
+          <li>找到 page、pageSize、items 和 nextPage。</li>
+          <li>在 Sources 给 loadProducts 设置断点，重新触发。</li>
+        </ol>
+      </section>
+    </main>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

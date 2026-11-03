@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>00 · JS 基础</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>00 · JavaScript 基础</h1>
+      <p>先理解语言本身，再开始分析浏览器代码。</p>
+      <nav>
+        <a href="/">实验室首页</a><a aria-current="page" href="/labs/00-basics/">00 基础</a>
+      </nav>
+    </header>
+    <main class="stack">
+      <section class="panel">
+        <h2>练习 A：闭包</h2>
+        <p class="muted">点击三次，观察内部变量是否保留。</p>
+        <button class="button primary" id="counter">调用闭包</button>
+        <pre class="output" id="counter-output">等待操作…</pre>
+      </section>
+      <section class="panel">
+        <h2>练习 B：原型链</h2>
+        <p class="muted">查看对象自身属性与原型上的属性。</p>
+        <button class="button" id="prototype">检查原型</button>
+        <pre class="output" id="prototype-output">等待操作…</pre>
+      </section>
+      <section class="panel">
+        <h2>练习 C：事件循环</h2>
+        <p class="muted">预测同步代码、微任务和定时器的执行顺序。</p>
+        <button class="button" id="event-loop">运行顺序示例</button>
+        <pre class="output" id="event-output">等待操作…</pre>
+      </section>
+      <section class="panel">
+        <h2>本章任务</h2>
+        <ol>
+          <li>解释闭包为什么能记住 count。</li>
+          <li>解释 name 属性为什么不在对象自身属性列表里。</li>
+          <li>先预测事件循环输出，再点击验证。</li>
+        </ol>
+      </section>
+    </main>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

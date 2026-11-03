@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>07 · 综合案例</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>07 · 综合案例：商品结算</h1>
+      <p>从页面动作追踪商品 API、价格汇总和优惠券预览。</p>
+      <nav>
+        <a href="/">实验室首页</a><a aria-current="page" href="/labs/07-final-case/">07 综合案例</a>
+      </nav>
+    </header>
+    <main class="stack">
+      <section class="panel">
+        <h2>商品列表</h2>
+        <button class="button primary" id="load-catalog">加载商品</button>
+        <div id="catalog" class="stack"></div>
+        <p>已选商品小计：<strong id="subtotal">0.00</strong></p>
+      </section>
+      <section class="panel">
+        <h2>优惠券预览</h2>
+        <div class="row">
+          <label>优惠码<input id="coupon-code" value="LAB10" /></label
+          ><button class="button primary" id="preview-coupon">计算应付金额</button>
+        </div>
+        <pre class="output" id="checkout-output">等待操作…</pre>
+      </section>
+      <section class="panel">
+        <h2>逆向任务清单</h2>
+        <ol>
+          <li>从按钮监听器找到入口函数。</li>
+          <li>找到商品列表请求及分页数据结构。</li>
+          <li>找到 subtotal 的计算位置。</li>
+          <li>追踪优惠券请求的 Body 和响应字段。</li>
+          <li>写出自己的计算函数，并补充边界测试。</li>
+        </ol>
+      </section>
+    </main>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
