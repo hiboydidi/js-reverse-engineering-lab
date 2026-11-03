@@ -1,9 +1,20 @@
 import { test, expect } from '@playwright/test';
 
-test('home page shows the learning labs', async ({ page }) => {
+test('dashboard renders the learning overview', async ({ page }) => {
   await page.goto('/');
-  await expect(page.getByRole('heading', { name: 'JavaScript 逆向工程实战实验室' })).toBeVisible();
-  await expect(page.getByRole('link', { name: '进入实验 →' }).first()).toBeVisible();
+  await expect(
+    page.getByRole('heading', { name: '把每一次调试，变成可复用的能力。' }),
+  ).toBeVisible();
+  await expect(page.locator('#module-grid .module-card')).toHaveCount(8);
+  await expect(page.locator('#api-status')).toContainText('靶场在线');
+});
+
+test('code workspace runs closure example', async ({ page }) => {
+  await page.goto('/#workspace');
+  await page.getByRole('button', { name: '▶ 运行代码' }).click();
+  await expect(page.locator('#console-output')).toContainText('1');
+  await expect(page.locator('#console-output')).toContainText('2');
+  await expect(page.locator('#console-output')).toContainText('3');
 });
 
 test('network lab loads products from the local API', async ({ page }) => {

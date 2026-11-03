@@ -127,6 +127,17 @@ npm run install:browsers # 安装 Playwright Chromium
 └── tests/               # 单元测试和浏览器测试
 ```
 
+## Web UI 功能
+
+仓库首页现在是深色 IDE 风格学习工作台：
+
+- 学习总览：8 个课程模块、完成比例和学习入口。
+- 课程侧栏：可直接进入对应实验页面。
+- 代码工作台：CodeMirror 编辑器、示例切换、运行输出。
+- 隔离执行：用户代码在 sandbox iframe 中执行，不与主页面共享 DOM。
+- 案例中心：5 个完整案例的入口。
+- 学习进度：保存在当前浏览器的 LocalStorage。
+
 ## 案例入口
 
 - cases/01-coupon-reconstruction：从压缩后的页面逻辑恢复优惠券计算规则。
