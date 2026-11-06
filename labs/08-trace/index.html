@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b1020" />
+    <title>Trace Studio · JS Reverse Lab</title>
+  </head>
+  <body>
+    <main class="layout">
+      <header class="page-header">
+        <div class="header-top">
+          <a href="/" class="back">← 返回 JS Reverse Lab</a>
+          <span class="pill">LAB 08 · 本地授权样本</span>
+        </div>
+        <div class="heading">
+          <div>
+            <p class="eyebrow">TRACE / REPLAY / COMPARE</p>
+            <h1>JavaScript 执行追踪实验室</h1>
+            <p class="subtitle">
+              从函数调用，到依赖关系，再到两份代码的行为对比。全程使用本地教学样本。
+            </p>
+          </div>
+          <span class="version">TRACE STUDIO<br /><b>V0.1</b></span>
+        </div>
+      </header>
+
+      <section class="metrics" aria-label="运行指标">
+        <div class="metric">
+          <small>已记录调用</small><strong id="metric-calls">—</strong><span>函数执行次数</span>
+        </div>
+        <div class="metric">
+          <small>动态依赖</small><strong id="metric-edges">—</strong><span>实际发生的调用边</span>
+        </div>
+        <div class="metric">
+          <small>最新执行</small><strong id="metric-runtime">—</strong><span>Worker 运行耗时</span>
+        </div>
+        <div class="metric">
+          <small>行为对比</small><strong id="metric-match">未开始</strong><span>比较输出结果</span>
+        </div>
+      </section>
+
+      <section class="controls" aria-label="运行控制">
+        <div>
+          <h2>代码实验台</h2>
+          <p>
+            使用 <code>trace('函数名', fn)</code> 包裹需要观察的函数；用顶层
+            <code>const result</code> 返回实验结果。
+          </p>
+        </div>
+        <div class="actions">
+          <button id="reset-demo" class="button subtle" type="button">重置案例</button>
+          <button id="inject-bug" class="button subtle" type="button">制造差异</button>
+          <button id="run-trace" class="button primary" type="button">▶ 追踪 A</button>
+          <button id="run-compare" class="button accent" type="button">对比 A / B</button>
+        </div>
+      </section>
+
+      <section class="editors" aria-label="代码编辑">
+        <div class="panel">
+          <div class="panel-bar"><b>版本 A · 原始实现</b><span class="file">source.js</span></div>
+          <label class="sr-only" for="source-code">版本 A 代码</label>
+          <textarea
+            id="source-code"
+            spellcheck="false"
+            autocapitalize="off"
+            autocomplete="off"
+          ></textarea>
+          <div class="panel-foot">TRACE ENABLED <span>可编辑 · 仅测试自有代码</span></div>
+        </div>
+        <div class="panel">
+          <div class="panel-bar">
+            <b>版本 B · 复现实现</b><span class="file">candidate.js</span>
+          </div>
+          <label class="sr-only" for="candidate-code">版本 B 代码</label>
+          <textarea
+            id="candidate-code"
+            spellcheck="false"
+            autocapitalize="off"
+            autocomplete="off"
+          ></textarea>
+          <div class="panel-foot">COMPARISON READY <span>改变版本 B 后再次对比</span></div>
+        </div>
+      </section>
+
+      <div class="statusbar" role="status" aria-live="polite">
+        <span class="dot"></span><span id="run-status">示例已加载，点击「追踪 A」。</span
+        ><button type="button" id="export-json">导出 JSON ↓</button>
+      </div>
+
+      <section class="results" aria-label="追踪结果">
+        <article class="panel result-card">
+          <div class="panel-bar"><b>调用树</b><span>CALL TREE</span></div>
+          <ol id="call-tree" class="calls">
+            <li class="placeholder">运行后查看函数调用及耗时。</li>
+          </ol>
+          <p class="note">嵌套层级由同步调用关系决定；异步 await 后的子调用暂不自动关联。</p>
+        </article>
+        <article class="panel result-card">
+          <div class="panel-bar"><b>依赖关系</b><span>DYNAMIC CALL GRAPH</span></div>
+          <ul id="edge-list" class="edges">
+            <li class="placeholder">运行后显示实际出现的调用边。</li>
+          </ul>
+          <p class="note">动态依赖只代表本次输入执行过的路径，不等同于完整静态调用图。</p>
+        </article>
+        <article class="panel result-card">
+          <div class="panel-bar"><b>运行输出</b><span>OUTPUT &amp; LOGS</span></div>
+          <pre id="run-output" class="terminal">尚无运行数据。</pre>
+        </article>
+        <article class="panel result-card">
+          <div class="panel-bar"><b>结果比较</b><span>DIFFERENTIAL TEST</span></div>
+          <pre id="compare-output" class="terminal">点击「对比 A / B」验证输出是否一致。</pre>
+        </article>
+      </section>
+
+      <footer class="footer">
+        仅供本地教学、自有脚本及明确授权的测试。不会生成或重放第三方网站的验证令牌。不要粘贴来源不明的脚本或秘密数据。
+      </footer>
+    </main>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
