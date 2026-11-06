@@ -34,6 +34,7 @@ export default defineConfig({
         storage: resolve(root, 'labs/05-storage/index.html'),
         websocket: resolve(root, 'labs/06-websocket/index.html'),
         finalCase: resolve(root, 'labs/07-final-case/index.html'),
+        trace: resolve(root, 'labs/08-trace/index.html'),
       },
     },
   },
